@@ -1,0 +1,20 @@
+{
+  "/geo/": {
+    "target": "https://geocoder.meteomatics.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/geo": ""
+    }
+  },
+  "/weather/": {
+    "target": "https://api.meteomatics.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/weather": ""
+    }
+  }
+}

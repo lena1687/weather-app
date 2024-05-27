@@ -1,0 +1,54 @@
+@import '../../../../../styles'
+
+\:host
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .date-info
+    @include typo-body-small
+    color: $primary-text-opacity-60
+
+  .temperature-value
+    color: $bg-color
+    font-weight: 600
+
+  .celsius-icon
+    color: $bg-color
+
+  .average-temperature
+    align-items: flex-start
+    display: flex
+    margin: 27px 0 48px
+
+    .temperature-value
+      font-size: 120px
+      line-height: 120px
+
+    .celsius-icon
+      @include typo-body-big
+
+  .day-temperatures
+    display: flex
+
+    .daily-forecast
+      align-items: center
+      display: flex
+      flex-direction: column
+
+      &:not(:last-child)
+        margin-right: 34px
+
+      .day-title
+        @include typo-body-small
+        color: $primary-text-opacity-60
+
+      .daily-temperature
+        align-items: flex-start
+        display: flex
+
+        .temperature-value
+          @include typo-body-big
+
+        .celsius-icon
+          @include typo-label-icon

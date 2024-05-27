@@ -1,0 +1,3 @@
+<app-icon imagePath="assets/icons/weather/cloud.svg" [size]="48" alt="cloud-pic"></app-icon>
+<app-select [options]="countries" (optionSelected)="selectedCountry($event)"></app-select>
+<app-autocomplete [options]="cityList" [placeholder]="'Please enter your location'" (optionSelected)="selectedLocation($event)" (inputValue)="changeLocation($event)" [autocompleteControl]="autocompleteControl" [isLoadingList]="isLoadingCityList"></app-autocomplete>

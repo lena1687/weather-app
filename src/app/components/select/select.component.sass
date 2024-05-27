@@ -1,0 +1,40 @@
+@import '../../../styles'
+
+\:host ::ng-deep mat-form-field
+
+  .mat-mdc-text-field-wrapper
+    border: 1px solid $input-shadow
+    border-radius: 6px
+    padding: 0 12px
+
+    &.mdc-text-field--outlined
+      &:hover,
+      &:active
+        .mdc-notched-outline
+          .mdc-notched-outline__leading,
+          .mdc-notched-outline__notch,
+          .mdc-notched-outline__trailing
+            border-color: $input-shadow
+
+    .mat-mdc-form-field-flex
+      .mdc-notched-outline__leading,
+      .mdc-notched-outline__trailing
+        border-color: $input-shadow
+
+      .mat-mdc-form-field-infix
+        width: 71px
+
+        mat-select-trigger
+          align-items: center
+          display: flex
+
+          mat-icon
+            font-size: unset
+            margin-right: 8px
+
+          .icon-text
+            @include typo-label-icon
+            color: $primary-text
+
+        .mat-mdc-select-arrow
+          opacity: 40%

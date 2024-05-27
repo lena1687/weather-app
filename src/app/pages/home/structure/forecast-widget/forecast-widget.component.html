@@ -1,0 +1,14 @@
+<div class="date-info"><span>{{getDateInfo()}}</span></div>
+<div class="average-temperature">
+  <span class="temperature-value">{{getAverageTemp()}}</span>
+  <span class="celsius-icon">°C</span>
+</div>
+<div class="day-temperatures">
+  <div class="daily-forecast" *ngFor="let day of this.forecastData | slice:0:7">
+    <div class="day-title">{{getWeekDay(day.date)}}</div>
+    <div class="daily-temperature">
+      <span class="temperature-value">{{day.value | number:'1.0-0'}}</span>
+      <span class="celsius-icon">°C</span>
+    </div>
+  </div>
+</div>

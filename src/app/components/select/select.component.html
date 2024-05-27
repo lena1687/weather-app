@@ -1,0 +1,16 @@
+<div class="select custom-density">
+  <mat-form-field appearance="outline">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <mat-select (selectionChange)='onSelectionChange($event)' [formControl]="optionsList">
+      <mat-select-trigger>
+        <mat-icon *ngIf="optionsList.value?.length > 1 && classOfSelectedValue" [ngClass]="classOfSelectedValue"></mat-icon>
+        <span class="icon-text">{{optionsList.value ? optionsList.value : ''}}</span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        <mat-icon *ngIf="option.iconClass" [ngClass]="option.iconClass"></mat-icon>
+        <span>{{ option.value }}</span>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+

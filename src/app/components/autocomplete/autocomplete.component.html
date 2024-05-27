@@ -1,0 +1,14 @@
+<div class="autocomplete custom-density">
+  <mat-form-field appearance="outline">
+    <input type="text" [placeholder]="placeholder" matInput [formControl]="autocompleteControl" [matAutocomplete]="auto"
+           (change)="onInputChange($event)">
+    <app-icon [ngClass]="'loader-animation'" *ngIf="isLoadingList" [imagePath]="'assets/icons/forms/loading.svg'" [size]="24" alt="icon"></app-icon>
+    <app-icon *ngIf="!isLoadingList" [imagePath]="'assets/icons/forms/search.svg'" [size]="24" alt="icon"></app-icon>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)='selectOption($event)' [displayWith]="displayFn">
+      <mat-option *ngFor="let option of options" [value]="option">
+        <mat-icon *ngIf="option.icon">{{option.icon}}</mat-icon>
+        <span>{{option.value}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

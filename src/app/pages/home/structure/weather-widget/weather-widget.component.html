@@ -1,0 +1,9 @@
+<app-search-panel (weatherData) = forecastData($event)></app-search-panel>
+<div class="weather-content">
+  <div *ngIf="isWeatherLoaded">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="!isWeatherLoaded">
+    <app-forecast-widget *ngIf="weatherData && weatherData.length > 0" [forecastData] = weatherData></app-forecast-widget>
+  </div>
+</div>

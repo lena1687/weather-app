@@ -1,0 +1,35 @@
+@use '@angular/material' as mat
+@import 'assets/styles/vars/typo.sass'
+@import 'assets/styles/vars/colors.sass'
+
+*
+  font-family: $font-family
+
+html, body
+  height: 100%
+
+body
+  display: flex
+  flex-direction: column
+  margin: 0
+  min-height: 100vh
+
+// Angular Material design
+
+mat-icon
+  font-family: 'Material Icons'
+
+.custom-density
+  @include mat.all-component-densities(-2)
+
+.cdk-overlay-container
+  .mat-mdc-select-panel
+    .mat-mdc-option
+      padding: 0 12px
+      mat-icon
+        margin-right: 8px
+  .mat-mdc-option
+    min-height: 34px
+    .mdc-list-item__primary-text
+      @include typo-input-text
+      font-family: $font-family
